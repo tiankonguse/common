@@ -1,0 +1,218 @@
+/*  top button css begin */
+
+
+.top-btn {
+	position: fixed;
+	bottom: 100px;
+	right: -50px;
+	height: 50px;
+	width: 50px;
+	background: url('../img/top.png') 0 0 no-repeat;
+	cursor: pointer;
+}
+
+.top-btn:hover {
+	background-position: -50px 0px;
+	cursor: url(../img/cursors/handcursor.cur), auto;
+}
+
+.top-show {
+	right: 100px;
+	-webkit-animation: top-show 1s linear;
+	-moz-animation: top-show 1s linear;
+	-ms-animation: top-show 1s linear;
+	-o-animation: top-show 1s linear;
+	animation: top-show 1s linear;
+}
+
+.top-hide {
+	right: -50px;
+	-webkit-animation: top-hide 1s linear;
+	-moz-animation: top-hide 1s linear;
+	-ms-animation: top-hide 1s linear;
+	-o-animation: top-hide 1s linear;
+	animation: top-hide 1s linear;
+}
+
+@-webkit-keyframes top-show {
+	0% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+}
+@-moz-keyframes top-show {
+	0% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+}
+@-ms-keyframes top-show {
+	0% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+}
+@-o-keyframes top-show {
+	0% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+}
+@keyframes top-show {
+	0% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+}
+@-webkit-keyframes top-hide {
+	0% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+	100% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+}
+@-moz-keyframes top-hide {
+	0% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+	100% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+}
+@-ms-keyframes top-hide {
+	0% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+	100% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+}
+@-o-keyframes top-hide {
+	0% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+	100% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+}
+@keyframes top-hide {
+	0% {
+		right : 100px;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		    -ms-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+	}
+	100% {
+		right : -50px;
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+}
+
+/* top button css end */
