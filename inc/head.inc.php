@@ -6,8 +6,6 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta name="description" content="<?php echo $title; ?>">
 <title><?php echo $title; ?></title>
-<link href="<?php echo DOMAIN_IMG; ?>/logo.ico" rel="shortcut icon" /> 
-<link href="<?php echo DOMAIN_CSS; ?>/animation.css" rel="stylesheet">
-<link href="<?php echo DOMAIN_CSS; ?>/main.css" rel="stylesheet">
-
-<script src="<?php echo DOMAIN_JS; ?>/TK.js"></script>
+<link href="<?php echo DOMAIN_IMG; ?>logo.ico" rel="shortcut icon" /> 
+<link href="<?php echo DOMAIN_CSS; ?>animation.css" rel="stylesheet">
+<link href="<?php echo DOMAIN_CSS; ?>main.css" rel="stylesheet">

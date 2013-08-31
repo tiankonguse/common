@@ -195,8 +195,8 @@ jQuery.fn = jQuery.prototype = {
 
 			// HANDLE: $(expr, $(...))
 			} else if ( !context || context.jquery ) {
-				console.log(rootjQuery );
-				console.log("----");
+				//console.log(rootjQuery );
+				//console.log("----");
 				return ( context || rootjQuery ).find( selector );
 
 			// HANDLE: $(expr, context)
