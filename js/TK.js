@@ -1,3 +1,76 @@
+function getPropertyName(o){
+    var r = [];
+    for(name in o){
+        r.push(name);
+    }
+    return r;
+}
+
+function copyProperties(from, to){
+    if(!to)to = {};
+    for(p in from){
+        to[p] = from[p];
+    }
+    return to;
+}
+
+function copyUndefinedProperties(from, to){
+    if(!to)to = {};
+    for(p in from){
+        if(! p in to){
+            to[p] = from[p];
+        }
+    }
+    return to;
+}
+
+var inspector = function($){return eval($);};
+
+function inspect(inspector, title){
+    var expression, result;
+    if("ignore" in arguments.callee)return;
+    while(true){
+        var message = "";
+        if(title){
+            message = title + "\n";
+        }
+        if(expression){
+            message += "\n" + expression + " ==> " + result + "\n";
+        }else{
+            expression = "";
+        }
+        
+        message += "Enter an expression to evalutate: ";
+        
+        expression = prompt(message, expression);
+        
+        if(!expression)return ;
+        
+        result = inspector(expression);
+        
+    }
+}
+
+
+if(!Function.prototype.apply){
+    Function.prototype.apply = function(object, parameters){
+        var f = this;
+        var o = object || window;
+        var args = parameters || [];
+        
+        o._$_apply_$_ = f;
+        var stringArgs = {};
+        for(var i = 0;i < args.length; i++){
+            stringArgs[i] = "args[" + i + "]";
+        }
+        var arglist = stringArgs.join(",");
+        var methodcall = "o._$_apply_$_(" + arglist + ");";
+        var result = eval(methodcall);
+        delete o._$_apply_$_;
+        return result;        
+    };
+}
+
 /*TK JavaScript Library v1.0.2*/
 (function(window, undefined) {
 	// "use strict";
