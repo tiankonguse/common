@@ -9,6 +9,7 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta name="description" content="<?php echo $title; ?>">
 <meta name="baidu-site-verification" content="ZhyOV9d6LT" />
+<meta name="baidu_union_verify" content="c590d7896c8220afbefc11661acc9820">
 
 <title><?php echo $title; ?></title>
 <link href="<?php echo DOMAIN_IMG; ?>logo.ico" rel="shortcut icon" /> 
