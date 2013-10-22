@@ -25,6 +25,6 @@ if (! defined ( "COMMON_LOAD" )) {
     ! defined ( "DOMAIN_RJBQ" ) && define ( "DOMAIN_RJBQ", DOMAIN . "/rjbq/" );
     ! defined ( "DOMAIN_LOG" ) && define ( "DOMAIN_LOG", DOMAIN . "/log/" );
     ! defined ( "DOMAIN_TIMELINE" ) && define ( "DOMAIN_TIMELINE", DOMAIN . "/timeline/" );
-    ! defined ( "DOMAIN_LAB" ) && define ( "DOMAIN_LAB", DOMAIN . "/lab/" );
+    ! defined ( "DOMAIN_LAB" ) && define ( "DOMAIN_LAB", "http://lab."._DOMAIN );
 }
 ?>
