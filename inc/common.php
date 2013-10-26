@@ -3,11 +3,22 @@ if (! defined ( "COMMON_LOAD" )) {
     // BASE work in server
     // DOMAIN work in client
     
+    $server_ip = $_SERVER['SERVER_ADDR'];
+    
+    
     ! defined ( "COMMON_LOAD" ) && define ( "COMMON_LOAD", true );
+    
+    
     ! defined ( "BASE" ) && define ( "BASE", dirname ( dirname ( dirname ( __FILE__ ) ) ) . "/" );
     
     
-    ! defined ( "_DOMAIN" ) && define ( "_DOMAIN", "tk.com:8080" );
+    if(strcmp($server_ip, "127.0.0.1") == 0){
+            ! defined ( "_DOMAIN" ) && define ( "_DOMAIN", "tk.com" );
+    }else{
+        ! defined ( "_DOMAIN" ) && define ( "_DOMAIN", "tiankonguse.com" );
+    }    
+    
+
     ! defined ( "DOMAIN" ) && define ( "DOMAIN", "http://"._DOMAIN );
     
     ! defined ( "BASE_COMMON" ) && define ( "BASE_COMMON", BASE . "common/" );
