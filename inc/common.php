@@ -30,6 +30,7 @@ if (! defined ( "COMMON_LOAD" )) {
     ! defined ( "DOMAIN_CSS" ) && define ( "DOMAIN_CSS", DOMAIN_COMMON . "css/" );
     ! defined ( "DOMAIN_kindeditor" ) && define ( "DOMAIN_kindeditor", DOMAIN_COMMON . "kindeditor/" );
     ! defined ( "DOMAIN_datepicker" ) && define ( "DOMAIN_datepicker", DOMAIN_COMMON . "datepicker/" );
+    ! defined ( "DOMAIN_mathjax" ) && define ( "DOMAIN_mathjax", DOMAIN_COMMON . "mathjax/" );
     
     ! defined ( "DOMAIN_HOME" ) && define ( "DOMAIN_HOME", DOMAIN . "/i/" );
     ! defined ( "DOMAIN_RECORD" ) && define ( "DOMAIN_RECORD", DOMAIN . "/record/" );

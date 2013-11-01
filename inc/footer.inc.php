@@ -61,3 +61,4 @@ function showMessage(message) {
     }
 })();
 </script>
+<script src="<?php echo DOMAIN_mathjax;?>MathJax.js?config=default" type="text/javascript"></script>
