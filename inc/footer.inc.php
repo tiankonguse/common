@@ -22,7 +22,15 @@
 	</div>
 	<div class="copyright">联系邮箱：i@tiankonguse.com</div>
 	<div class="copyright">QQ : 804345178</div>
-	<div class="copyright">如果本站侵犯你的权利，请联系上面邮箱，我会会尽快删除.</div>
+	<div class="copyright">
+		<a rel="license" target="_blank"
+			href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img
+			alt="知识共享许可协议" style="border-width: 0"
+			src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br />本作品采用<a
+			target="_blank" rel="license"
+			href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh">知识共享署名-非商业性使用-相同方式共享
+			3.0 未本地化版本许可协议</a>进行许可。
+	</div>
 	<div class="copyright">
 		<script type="text/javascript"
 			src="http://tajs.qq.com/stats?sId=26608498" charset="UTF-8"></script>
@@ -61,4 +69,10 @@ function showMessage(message) {
     }
 })();
 </script>
-<script src="<?php echo DOMAIN_mathjax;?>MathJax.js?config=default" type="text/javascript"></script>
+<script
+	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"
+	type="text/javascript"></script>
+<script src="<?php echo DOMAIN_mathjax; ?>MathJax.js?config=default"
+	type="text/javascript"></script>
+
+
