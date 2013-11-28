@@ -412,7 +412,6 @@ blockquote {
 	margin: 20px;
 	border-left: 10px solid #DDD;
 	font-weight: bold;
-	white-space: pre-wrap;
 	display: block;
 	padding: 10px 20px 10px 40px;
 	background: #F8F8F8;
