@@ -20,7 +20,7 @@
 		<a href="<?php echo DOMAIN?>">tiankonguse.com</a>. All rights
 		reserved.
 	</div>
-	<div class="copyright">联系邮箱：i@tiankonguse.com</div>
+	<div class="copyright">联系邮箱：<a href="mailto:i@tiankonguse.com">i@tiankonguse.com</a></div>
 	<div class="copyright">QQ : 804345178</div>
 	<div class="copyright">
 		<a rel="license" target="_blank"
@@ -72,7 +72,6 @@ function showMessage(message) {
 <script
 	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"
 	type="text/javascript"></script>
-<script src="<?php echo DOMAIN_mathjax; ?>MathJax.js?config=default"
-	type="text/javascript"></script>
+
 
 
