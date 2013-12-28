@@ -14,6 +14,7 @@
 </div>
 
 <div class="footer">
+	<div class="copyright"><a href="<?php echo DOMAIN_RECORD."donate.php"?>">捐赠本站</a></div>
 	<div class="copyright">
 		Copyright © 2012 ~
 		<script>document.write(new Date().getFullYear());</script>
@@ -68,6 +69,12 @@ function showMessage(message) {
 		});
     }
 })();
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+  });
 </script>
 <script
 	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"

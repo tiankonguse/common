@@ -25,9 +25,10 @@ if (PHP_VERSION_ID < 50207) {
 	define('PHP_MINOR_VERSION',   $version[1]);
 	define('PHP_RELEASE_VERSION', $version[2]);
 }
-
+//50310 is now installed version.
+// if update php,you should update this comment and if statement.
 function getDateFromMysql($data){
-	if(PHP_VERSION_ID < 50317){
+	if(PHP_VERSION_ID <= 50310 &&  get_magic_quotes_gpc()){
 		$data = stripslashes($data);
 	}
 	return $data;
