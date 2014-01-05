@@ -9,8 +9,8 @@ define('DB_NAME','tiankong_site');
 define('DB_PASS','4nMuNnZX');
 define('SALT','tiankonguse');
 
-define('OUTPUT_SUCCESS','0');
-define('OUTPUT_ERROR','1');
+ ! defined ( "OUTPUT_SUCCESS" ) &&define('OUTPUT_SUCCESS','0');
+ ! defined ( "OUTPUT_ERROR" ) &&define('OUTPUT_ERROR','1');
 
 $conn = false;
 $result = false;
