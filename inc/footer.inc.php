@@ -30,7 +30,7 @@
 		<a rel="license" target="_blank"
 			href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img
 			alt="知识共享许可协议" style="border-width: 0"
-			src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /> </a><br />本作品采用<a
+			src="<?php echo DOMAIN_IMG?>creativecommons.png" /> </a><br />本作品采用<a
 			target="_blank" rel="license"
 			href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh">知识共享署名-非商业性使用-相同方式共享
 			3.0 未本地化版本许可协议</a>进行许可。
@@ -41,10 +41,17 @@
 				echo "<script type=\"text/javascript\" src=\"http://tajs.qq.com/stats?sId=26608498\" charset=\"UTF-8\"></script>";
 			}
 			?>
+		<?php 
+		if(0){
+				?>
 		<script type="text/javascript">
 			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c743a9badeff72a194b85235f301f37' type='text/javascript'  %3E%3C/script%3E"));
         </script>
+		<?php 
+			}
+			?>
+
 		<?php 
 		if(0){
 				echo "<script type=\"text/javascript\">var cnzz_protocol = ((\"https:\" == document.location.protocol) ? \" https://\" : \" http://\");document.write(unescape(\"%3Cspan id='cnzz_stat_icon_1000110679'%3E%3C/span%3E%3Cscript src='\" + cnzz_protocol + \"s22.cnzz.com/z_stat.php%3Fid%3D1000110679%26show%3Dpic' type='text/javascript' %3E%3C/script%3E\"));</script>";
@@ -82,15 +89,8 @@ function showMessage(message) {
     }
 })();
 </script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    showProcessingMessages: false,
-    tex2jax: { inlineMath: [['\\(','\\)']] }
-  });
-</script>
-<script
-	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"
-	type="text/javascript" async></script>
+
+
 
 
 

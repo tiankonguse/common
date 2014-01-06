@@ -19,7 +19,7 @@ article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,sec
 }
 
 a,a:hover,a:focus {
-	cursor: url(../img/cursors/handcursor.cur), auto;
+	cursor: url(/common/img/cursors/handcursor.cur), auto;
 	color: #999999;
 	text-decoration: none;
 }
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .handcursor {
-	cursor: url(../img/cursors/handcursor.cur), auto ;
+	cursor: url(/common/img/cursors/handcursor.cur), auto ;
 }
 
 /* cursor end  */
@@ -44,8 +44,8 @@ body {
 	font-size: 20px;
 	color: #333333;
 	height: 100%;
-	cursor: url(../img/cursors/cursorActive.cur),
-		url(../img/cursors/cursorActive.png), auto;
+	cursor: url(/common/img/cursors/cursorActive.cur),
+		url(/common/img/cursors/cursorActive.png), auto;
 }
 
 h2 {
@@ -135,13 +135,13 @@ textarea {
 	right: -50px;
 	height: 50px;
 	width: 50px;
-	background: url('../img/top.png') 0 0 no-repeat;
+	background: url('/common/img/top.png') 0 0 no-repeat;
 	cursor: pointer;
 }
 
 .top-btn:hover {
 	background-position: -50px 0px;
-	cursor: url(../img/cursors/handcursor.cur), auto;
+	cursor: url(/common/img/cursors/handcursor.cur), auto;
 }
 
 .top-show {
