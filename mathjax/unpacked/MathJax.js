@@ -1,28 +1,3 @@
-/*************************************************************
- *
- *  MathJax.js
- *  
- *  The main support code for the MathJax Hub, including the
- *  Ajax, Callback, Messaging, and Object-Oriented Programming
- *  libraries, as well as the base Jax classes, and startup
- *  processing code.
- *  
- *  ---------------------------------------------------------------------
- *  
- *  Copyright (c) 2009-2012 Design Science, Inc.
- * 
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- */
 
 if (document.getElementById && document.childNodes && document.createElement) {
 
@@ -157,57 +132,6 @@ MathJax.fileversion = "2.1";
   });
 
 })("MathJax");
-
-/**********************************************************/
-
-/*
- *  Create a callback function from various forms of data:
- *  
- *     MathJax.Callback(fn)    -- callback to a function
- *
- *     MathJax.Callback([fn])  -- callback to function
- *     MathJax.Callback([fn,data...])
- *                             -- callback to function with given data as arguments
- *     MathJax.Callback([object,fn])
- *                             -- call fn with object as "this"
- *     MathJax.Callback([object,fn,data...])
- *                             -- call fn with object as "this" and data as arguments
- *     MathJax.Callback(["method",object])
- *                             -- call method of object wth object as "this"
- *     MathJax.Callback(["method",object,data...])
- *                             -- as above, but with data as arguments to method
- *
- *     MathJax.Callback({hook: fn, data: [...], object: this})
- *                             -- give function, data, and object to act as "this" explicitly
- *
- *     MathJax.Callback("code")  -- callback that compiles and executes a string
- *
- *     MathJax.Callback([...],i)
- *                             -- use slice of array starting at i and interpret
- *                                result as above.  (Used for passing "arguments" array
- *                                and trimming initial arguments, if any.)
- */
-
-/*
- *    MathJax.Callback.After([...],cb1,cb2,...)
- *                             -- make a callback that isn't called until all the other
- *                                ones are called first.  I.e., wait for a union of
- *                                callbacks to occur before making the given callback.
- */
-
-/*
- *  MathJax.Callback.Queue([callback,...])
- *                             -- make a synchronized queue of commands that process
- *                                sequentially, waiting for those that return uncalled
- *                                callbacks.
- */
-
-/*
- *  MathJax.Callback.Signal(name)
- *                             -- finds or creates a names signal, to which listeners
- *                                can be attached and are signaled by messages posted
- *                                to the signal.  Responses can be asynchronous.
- */
 
 (function (BASENAME) {
   var BASE = window[BASENAME];

@@ -12,7 +12,7 @@ if (! defined ( "COMMON_LOAD" )) {
 	! defined ( "BASE" ) && define ( "BASE", dirname ( dirname ( dirname ( __FILE__ ) ) ) . "/" );
 
 
-	if(strcmp($server_ip, "127.0.0.1") == 0){
+	if(strcmp($server_ip, "127.0.0.1") == 0 || true){
 		! defined ( "_DOMAIN" ) && define ( "_DOMAIN", "tk.com" );
 	}else{
 		! defined ( "_DOMAIN" ) && define ( "_DOMAIN", "tiankonguse.com" );

@@ -1,28 +1,8 @@
-function getPropertyName(o){
-    var r = [];
-    for(name in o){
-        r.push(name);
-    }
-    return r;
-}
 
-function copyProperties(from, to){
-    if(!to)to = {};
-    for(p in from){
-        to[p] = from[p];
-    }
-    return to;
-}
 
-function copyUndefinedProperties(from, to){
-    if(!to)to = {};
-    for(p in from){
-        if(! p in to){
-            to[p] = from[p];
-        }
-    }
-    return to;
-}
+
+
+
 
 var inspector = function($){return eval($);};
 
@@ -71,21 +51,21 @@ if(!Function.prototype.apply){
     };
 }
 
-/*TK JavaScript Library v1.0.2*/
+String.hasString || (String.prototype.hasString = function(a) {
+	if ("object" == typeof a) {
+		for ( var b = 0, e = a.length; b < e; b++)
+			if (!this.hasString(a[b]))
+				return !1;
+		return !0
+	}
+	if (-1 != this.indexOf(a))
+		return !0
+});
+
+/* TK JavaScript Library v1.0.3 */
 (function(window, undefined) {
 	// "use strict";
-	
-	String.hasString || (String.prototype.hasString = function(a) {
-		if ("object" == typeof a) {
-			for ( var b = 0, e = a.length; b < e; b++)
-				if (!this.hasString(a[b]))
-					return !1;
-			return !0
-		}
-		if (-1 != this.indexOf(a))
-			return !0
-	});
-	
+		
 	/* document */
 	var document = window.document,
 	/* TK(document) */
@@ -462,8 +442,10 @@ if(!Function.prototype.apply){
 						"*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" + whitespace +
 						"*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
 					"bool": new RegExp( "^(?:" + booleans + ")$", "i" ),
-					// For use in libraries implementing .is()
-					// We use this for POS matching in `select`
+					// For use in libraries implementing
+					// .is()
+					// We use this for POS matching in
+					// `select`
 					"needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
 						whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 				},
@@ -532,7 +514,8 @@ if(!Function.prototype.apply){
 		}
 
 		function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
-			// A counter to specify which element is currently being matched
+			// A counter to specify which element is currently being
+			// matched
 			var matcherCachedRuns = 0,
 				bySet = setMatchers.length > 0,
 				byElement = elementMatchers.length > 0,
@@ -544,9 +527,11 @@ if(!Function.prototype.apply){
 						unmatched = seed && [],
 						outermost = expandContext != null,
 						contextBackup = outermostContext,
-						// We must always have either seed elements or context
+						// We must always have either
+						// seed elements or context
 						elems = seed || byElement && Expr.find["TAG"]( "*", expandContext && context.parentNode || context ),
-						// Use integer dirruns iff this is the outermost matcher
+						// Use integer dirruns iff this
+						// is the outermost matcher
 						dirrunsUnique = (dirruns += contextBackup == null ? 1 : Math.random() || 0.1);
 
 					if ( outermost ) {
@@ -554,8 +539,11 @@ if(!Function.prototype.apply){
 						cachedruns = matcherCachedRuns;
 					}
 
-					// Add elements passing elementMatchers directly to results
-					// Keep `i` a string if there are no elements so `matchedCount` will be "00" below
+					// Add elements passing elementMatchers
+					// directly to results
+					// Keep `i` a string if there are no
+					// elements so `matchedCount` will be
+					// "00" below
 					for ( ; (elem = elems[i]) != null; i++ ) {
 						if ( byElement && elem ) {
 							j = 0;
@@ -571,21 +559,27 @@ if(!Function.prototype.apply){
 							}
 						}
 
-						// Track unmatched elements for set filters
+						// Track unmatched elements for
+						// set filters
 						if ( bySet ) {
-							// They will have gone through all possible matchers
+							// They will have gone
+							// through all possible
+							// matchers
 							if ( (elem = !matcher && elem) ) {
 								matchedCount--;
 							}
 
-							// Lengthen the array for every element, matched or not
+							// Lengthen the array
+							// for every element,
+							// matched or not
 							if ( seed ) {
 								unmatched.push( elem );
 							}
 						}
 					}
 
-					// Apply set filters to unmatched elements
+					// Apply set filters to unmatched
+					// elements
 					matchedCount += i;
 					if ( bySet && i !== matchedCount ) {
 						j = 0;
@@ -594,7 +588,9 @@ if(!Function.prototype.apply){
 						}
 
 						if ( seed ) {
-							// Reintegrate element matches to eliminate the need for sorting
+							// Reintegrate element
+							// matches to eliminate
+							// the need for sorting
 							if ( matchedCount > 0 ) {
 								while ( i-- ) {
 									if ( !(unmatched[i] || setMatched[i]) ) {
@@ -603,14 +599,20 @@ if(!Function.prototype.apply){
 								}
 							}
 
-							// Discard index placeholder values to get only actual matches
+							// Discard index
+							// placeholder values to
+							// get only actual
+							// matches
 							setMatched = condense( setMatched );
 						}
 
 						// Add matches to results
 						push.apply( results, setMatched );
 
-						// Seedless set matches succeeding multiple successful matchers stipulate sorting
+						// Seedless set matches
+						// succeeding multiple
+						// successful matchers stipulate
+						// sorting
 						if ( outermost && !seed && setMatched.length > 0 &&
 							( matchedCount + setMatchers.length ) > 1 ) {
 
@@ -618,7 +620,8 @@ if(!Function.prototype.apply){
 						}
 					}
 
-					// Override manipulation of globals by nested matchers
+					// Override manipulation of globals by
+					// nested matchers
 					if ( outermost ) {
 						dirruns = dirrunsUnique;
 						outermostContext = contextBackup;
@@ -677,7 +680,8 @@ if(!Function.prototype.apply){
 						matchIndexes = fn( [], seed.length, argument ),
 						i = matchIndexes.length;
 
-					// Match elements found at the specified indexes
+					// Match elements found at the specified
+					// indexes
 					while ( i-- ) {
 						if ( seed[ (j = matchIndexes[i]) ] ) {
 							seed[j] = !(matches[j] = seed[j]);
@@ -803,8 +807,12 @@ if(!Function.prototype.apply){
 							if ( compare & 1 ||
 								(!support.sortDetached && b.compareDocumentPosition( a ) === compare) ) {
 
-								// Choose the first element that is related to
-								// our preferred document
+								// Choose the
+								// first element
+								// that is
+								// related to
+								// our preferred
+								// document
 								if ( a === doc || contains(preferredDoc, a) ) {
 									return -1;
 								}
@@ -812,7 +820,9 @@ if(!Function.prototype.apply){
 									return 1;
 								}
 
-								// Maintain original order
+								// Maintain
+								// original
+								// order
 								return sortInput ?
 									( indexOf.call( sortInput, a ) - indexOf.call( sortInput, b ) ) :
 									0;
@@ -821,7 +831,8 @@ if(!Function.prototype.apply){
 							return compare & 4 ? -1 : 1;
 						}
 
-						// Not directly comparable, sort on existence of method
+						// Not directly comparable, sort
+						// on existence of method
 						return a.compareDocumentPosition ? -1 : 1;
 					} :
 					function( a, b ) {
@@ -832,12 +843,14 @@ if(!Function.prototype.apply){
 							ap = [ a ],
 							bp = [ b ];
 
-						// Exit early if the nodes are identical
+						// Exit early if the nodes are
+						// identical
 						if ( a === b ) {
 							hasDuplicate = true;
 							return 0;
 
-						// Parentless nodes are either documents or disconnected
+						// Parentless nodes are either
+						// documents or disconnected
 						} else if ( !aup || !bup ) {
 							return a === doc ? -1 :
 								b === doc ? 1 :
@@ -847,12 +860,14 @@ if(!Function.prototype.apply){
 								( indexOf.call( sortInput, a ) - indexOf.call( sortInput, b ) ) :
 								0;
 
-						// If the nodes are siblings, we can do a quick check
+						// If the nodes are siblings, we
+						// can do a quick check
 						} else if ( aup === bup ) {
 							return siblingCheck( a, b );
 						}
 
-						// Otherwise we need full lists of their ancestors for
+						// Otherwise we need full lists
+						// of their ancestors for
 						// comparison
 						cur = a;
 						while ( (cur = cur.parentNode) ) {
@@ -863,17 +878,22 @@ if(!Function.prototype.apply){
 							bp.unshift( cur );
 						}
 
-						// Walk down the tree looking for a discrepancy
+						// Walk down the tree looking
+						// for a discrepancy
 						while ( ap[i] === bp[i] ) {
 							i++;
 						}
 
 						return i ?
-							// Do a sibling check if the nodes have a common
+							// Do a sibling check if
+							// the nodes have a
+							// common
 							// ancestor
 							siblingCheck( ap[i], bp[i] ) :
 
-							// Otherwise nodes in our document sort first
+							// Otherwise nodes in
+							// our document sort
+							// first
 							ap[i] === preferredDoc ? -1 :
 							bp[i] === preferredDoc ? 1 :
 							0;
@@ -916,7 +936,8 @@ if(!Function.prototype.apply){
 					"ATTR" : function(match) {
 						match[1] = match[1].replace(runescape, funescape);
 
-						// Move the given value to match[3] whether quoted or
+						// Move the given value to
+						// match[3] whether quoted or
 						// unquoted
 						match[3] = (match[4] || match[5] || "").replace(runescape,
 								funescape);
@@ -940,7 +961,8 @@ if(!Function.prototype.apply){
 									: 2 * (match[3] === "even" || match[3] === "odd"));
 							match[5] = +((match[7] + match[8]) || match[3] === "odd");
 
-							// other types prohibit arguments
+							// other types prohibit
+							// arguments
 						} else if (match[3]) {
 							Sizzle.error(match[0]);
 						}
@@ -1063,9 +1085,16 @@ if(!Function.prototype.apply){
 														return false;
 													}
 												}
-												// Reverse direction for :only-*
-												// (if we
-												// haven't yet done so)
+												// Reverse
+												// direction
+												// for
+												// :only-*
+												// (if
+												// we
+												// haven't
+												// yet
+												// done
+												// so)
 												start = dir = type === "only" && !start
 														&& "nextSibling";
 											}
@@ -1119,8 +1148,13 @@ if(!Function.prototype.apply){
 											}
 										}
 
-										// Incorporate the offset, then check
-										// against cycle
+										// Incorporate
+										// the
+										// offset,
+										// then
+										// check
+										// against
+										// cycle
 										// size
 										diff -= last;
 										return diff === first
@@ -1138,7 +1172,8 @@ if(!Function.prototype.apply){
 							return fn(argument);
 						}
 
-						// But maintain support for old signatures
+						// But maintain support for old
+						// signatures
 						if (fn.length > 1) {
 							args = [ pseudo, pseudo, "", argument ];
 							return Expr.setFilters.hasOwnProperty(pseudo.toLowerCase()) ? markFunction(function(
@@ -1195,7 +1230,8 @@ if(!Function.prototype.apply){
 					}),
 
 					"lang" : markFunction(function(lang) {
-						// lang value must be a valid identifier
+						// lang value must be a valid
+						// identifier
 						if (!ridentifier.test(lang || "")) {
 							Sizzle.error("unsupported lang: " + lang);
 						}
@@ -1368,7 +1404,8 @@ if(!Function.prototype.apply){
 					matched = match.shift();
 					tokens.push({
 						value: matched,
-						// Cast descendant combinators to space
+						// Cast descendant combinators
+						// to space
 						type: match[0].replace( rtrim, " " )
 					});
 					soFar = soFar.slice( matched.length );
@@ -1414,7 +1451,8 @@ if(!Function.prototype.apply){
 				doneName = done++;
 
 			return combinator.first ?
-				// Check against closest ancestor/preceding element
+				// Check against closest ancestor/preceding
+				// element
 				function( elem, context, xml ) {
 					while ( (elem = elem[ dir ]) ) {
 						if ( elem.nodeType === 1 || checkNonElements ) {
@@ -1428,7 +1466,8 @@ if(!Function.prototype.apply){
 					var data, cache, outerCache,
 						dirkey = dirruns + " " + doneName;
 
-					// We can't set arbitrary data on XML nodes, so they don't
+					// We can't set arbitrary data on XML
+					// nodes, so they don't
 					// benefit from dir caching
 					if ( xml ) {
 						while ( (elem = elem[ dir ]) ) {
@@ -1466,7 +1505,8 @@ if(!Function.prototype.apply){
 				implicitRelative = leadingRelative || Expr.relative[" "],
 				i = leadingRelative ? 1 : 0,
 
-				// The foundational matcher ensures that elements are reachable
+				// The foundational matcher ensures that
+				// elements are reachable
 				// from top-level context(s)
 				matchContext = addCombinator( function( elem ) {
 					return elem === checkContext;
@@ -1487,9 +1527,11 @@ if(!Function.prototype.apply){
 				} else {
 					matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
 
-					// Return special upon seeing a positional matcher
+					// Return special upon seeing a
+					// positional matcher
 					if ( matcher[ expando ] ) {
-						// Find the next relative operator (if any) for proper
+						// Find the next relative
+						// operator (if any) for proper
 						// handling
 						j = ++i;
 						for ( ; j < len; j++ ) {
@@ -1500,8 +1542,14 @@ if(!Function.prototype.apply){
 						return setMatcher(
 							i > 1 && elementMatcher( matchers ),
 							i > 1 && toSelector(
-								// If the preceding token was a descendant
-								// combinator, insert an implicit any-element
+								// If the
+								// preceding
+								// token was a
+								// descendant
+								// combinator,
+								// insert an
+								// implicit
+								// any-element
 								// `*`
 								tokens.slice( 0, i - 1 ).concat({ value: tokens[ i - 2 ].type === " " ? "*" : "" })
 							).replace( rtrim, "$1" ),
@@ -1535,7 +1583,8 @@ if(!Function.prototype.apply){
 				cached = compilerCache[ selector + " " ];
 
 			if ( !cached ) {
-				// Generate a function of recursive functions that can be used
+				// Generate a function of recursive functions
+				// that can be used
 				// to check each element
 				if ( !group ) {
 					group = tokenize( selector );
@@ -1562,7 +1611,8 @@ if(!Function.prototype.apply){
 				j = 0,
 				i = 0;
 
-			// Unless we *know* we can detect duplicates, assume their presence
+			// Unless we *know* we can detect duplicates, assume
+			// their presence
 			hasDuplicate = !support.detectDuplicates;
 			sortInput = !support.sortStable && results.slice( 0 );
 			results.sort( sortOrder );
@@ -1666,7 +1716,8 @@ if(!Function.prototype.apply){
 				TK.find( selector, self[ i ], ret );
 			}
 
-			// Needed because $( selector, context ) becomes $( context ).find(
+			// Needed because $( selector, context ) becomes $(
+			// context ).find(
 			// selector )
 			ret = this.pushStack( len > 1 ? TK.unique( ret ) : ret );
 			ret.selector = this.selector ? this.selector + " " + selector : selector;
@@ -1700,3 +1751,315 @@ if(!Function.prototype.apply){
 	
 	window.TK = TK;
 })(window);
+
+
+function(){
+    /* TK JavaScript Library v1.0.1 */
+    (function(window, undefined) {
+    	
+    	"use strict";
+
+    	var loc = win.location, /**/
+    	doc = win.document, /**/
+    	nav = win.navigator,
+    	docElem = doc.documentElement, 
+    	$doc,
+    	g = {},
+    	readyFuns,
+    	removeReadyListener,
+    	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,
+    	readyList, /**/
+    	completed = function(event) {
+    		if (doc.addEventListener || event.type === "load" || doc.readyState === "complete") {
+    			detach();
+    			TK.ready();
+    		}
+    	},
+    	detach = function() {
+    		if (doc.addEventListener) {
+    			doc.removeEventListener("DOMContentLoaded", completed, false);
+    			win.removeEventListener("load", completed, false);
+    		} else {
+    			doc.detachEvent("onreadystatechange", completed);
+    			win.detachEvent("onload", completed);
+    		}
+    	},
+
+    	TK.fn = {
+    		each : function(obj, callback, args) {
+    			var value, i = 0, length = obj.length, isArray = isArraylike(obj);
+
+    			if (args) {
+    				if (isArray) {
+    					for (; i < length; i++) {
+    						value = callback.apply(obj[i], args);
+    						if (value === false) {
+    							break;
+    						}
+    					}
+    				} else {
+    					for (i in obj) {
+    						value = callback.apply(obj[i], args);
+    						if (value === false) {
+    							break;
+    						}
+    					}
+    				}
+
+    				// A special, fast, case for the most common use
+				// of each
+    			} else {
+    				if (isArray) {
+    					for (; i < length; i++) {
+    						value = callback.call(obj[i], i, obj[i]);
+
+    						if (value === false) {
+    							break;
+    						}
+    					}
+    				} else {
+    					for (i in obj) {
+    						value = callback.call(obj[i], i, obj[i]);
+
+    						if (value === false) {
+    							break;
+    						}
+    					}
+    				}
+    			}
+
+    			return obj;
+    		},
+
+
+    		noConflict: function( deep ) {
+    			if ( window.TK === TK ) {
+    				window.TK = _TK;
+    			}
+    			return TK;
+    		},
+
+
+    		error : function(msg) {
+    			throw new Error(msg);
+    		},
+
+    		nodeName : function(elem, name) {
+    			return elem.nodeName
+    					&& elem.nodeName.toLowerCase() === name.toLowerCase();
+    		},
+    		
+    		
+    		trim : core.trim && !core.trim.call("\uFEFF\xA0") ? function(text) {
+    			return text == null ? "" : core.trim.call(text);
+    		} : function(text) {
+    			return text == null ? "" : (text + "").replace(rtrim, "");
+    		},
+    		
+
+    		inArray : function(elem, arr, i) {
+    			var len;
+
+    			if (arr) {
+    				if (core.indexOf) {
+    					return core.indexOf.call(arr, elem, i);
+    				}
+
+    				len = arr.length;
+    				i = i ? i < 0 ? Math.max(0, len + i) : i : 0;
+
+    				for (; i < len; i++) {
+    					// Skip accessing in sparse arrays
+    					if (i in arr && arr[i] === elem) {
+    						return i;
+    					}
+    				}
+    			}
+
+    			return -1;
+    		},
+
+    		grep : function(elems, callback, inv) {
+    			var retVal, ret = [], i = 0, length = elems.length;
+    			inv = !!inv;
+    			for (; i < length; i++) {
+    				retVal = !!callback(elems[i], i);
+    				if (inv !== retVal) {
+    					ret.push(elems[i]);
+    				}
+    			}
+
+    			return ret;
+    		},
+    		now : function() {
+    			return (new Date()).getTime();
+    		},
+
+    	};	
+    	
+
+    	
+    	
+    	TK.Callbacks=function(){
+    		var funContainer = [];
+
+    		var addFun = function(obj){
+    			for(var i = 0, len = obj.length, value, _type; i < len; ++i){
+    				value = obj[i];
+    				_type = TK.type(value);
+    				
+    				if(_type === "array"){
+    					addFun(value);
+    				}else if(_type === "function"){
+    					funContainer.push(value);
+    				}
+    			}
+    		};
+    		
+    		var addFunsUI = {
+    			add : function(){
+    				
+    				if(funContainer){
+    					addFun(arguments);
+    				}
+    				return this;
+    			},
+    			empty : function(){
+    				funContainer = [];
+    				return this;
+    			},
+    			fireWith:function(){
+    			
+    				for(var i = 0, len = funContainer.length; i < len; ++i){
+    					funContainer[i]();
+    				}
+    				return this;
+    			}
+    		};
+    		
+    		return addFunsUI
+    	};
+    	
+
+
+    	
+    	TK.B = function(){
+    		var a={},b=navigator.userAgent;
+    		a.win=a.win||b.hasString("Win32");
+    		TK.each({win:"Windows",mac:"Mac",ie:"MSIE",ie6:"MSIE 6",ie7:"MSIE 7",ie8:"MSIE 8",ie9:"MSIE 9",safari:"WebKit",webkit:"WebKit",chrome:"Chrome",ipad:"iPad",iphone:"iPhone",os4:"OS 4",os5:"OS 5",os6:"OS 6",qq:"QQBrowser",firefox:"Firefox",tt:"TencentTraveler",opera:"Opera"},function(e,i){a[i]=b.hasString(e)});
+    		a.ie6=a.ie6&&!a.ie7&&!a.ie8;
+    		a.opera=window.opera||a.opera;
+    		try{
+    			a.maxthon=window.external&&window.external.max_version;
+    		}catch(e){}
+    		return a
+    	}();
+    	
+    	
+    	
+    	
+    	TK.extend({
+    	
+    		_trim : function(str) {
+    			return str.replace(/^\s+|\s+$/g, "");
+    		},
+    		xmlHttp : function() {
+    			return new XMLHttpRequest();
+    		},
+    		windowWidth : function() {
+    			var a = doc.documentElement;
+    			return self.innerWidth || a && a.clientWidth
+    					|| doc.body.clientWidth;
+    		},
+    		windowHeight : function() {
+    			var a = doc.documentElement;
+    			return self.innerHeight || a && a.clientHeight
+    					|| doc.body.clientHeight;
+    		},
+    		width : function(obj) {
+    			return obj ? parseInt(obj.offsetWidth) : 0;
+    		},
+    		utfDecode : function(a) {
+    			var b = "";
+    			for ( var c = 0, g = 0, l = a.length; c < l;) {
+    				g = a.charCodeAt(c);
+    				if (128 > g) {
+    					b += String.fromCharCode(g);
+    					c++;
+    				} else if (191 < g && 224 > g) {
+    					b += String.fromCharCode((g & 31) << 6 | a.charCodeAt(c + 1)
+    							& 63);
+    					c += 2;
+    				} else {
+    					b += String.fromCharCode((g & 15) << 12
+    							| (a.charCodeAt(c + 1) & 63) << 6 | a.charCodeAt(c + 2)
+    							& 63);
+    					c += 3;
+    				}
+    			}
+    			return b;
+    		},
+    		utfEncode : function(a) {
+    			var b = "";
+    			a = a.replace(/\r\n/g, "\n");
+    			for ( var c = 0, g = 0, l = a.length; c < l; c++) {
+    				g = a.charCodeAt(c);
+    				if (128 > g) {
+    					b += String.fromCharCode(g);
+    				} else if (127 < g && 2048 > g) {
+    					b += String.fromCharCode(g >> 6 | 192);
+    					b += String.fromCharCode(g & 63 | 128);
+    				} else {
+    					b += String.fromCharCode(g >> 12 | 224);
+    					b += String.fromCharCode(g >> 6 & 63 | 128);
+    					b += String.fromCharCode(g & 63 | 128);
+    				}
+    			}
+    			return b;
+    		},
+    		append : function(child, parent) {
+    			parent.appendChild(child);
+    		}
+    	});
+
+    	
+    	TK.extend({
+    		random : function(a, b) {
+    			var u = void 0;
+    			u == a && (a = 0);
+    			u == b && (b = 9);
+    			return Math.floor(Math.random() * (b - a + 1) + a);
+    		},
+    		hasClass : function(a, b) {
+    			return !a || !a.className ? !1 : a.className != a.className.replace(
+    					RegExp("\\b" + b + "\\b"), "");
+    		},
+    		isUndefined : function(a) {
+    			return "undefined" == typeof a;
+    		},
+    		getType : function(a) {
+    			return Object.prototype.toString.call(a).slice(8, -1);
+    		},
+    		removeClass : function(a, b) {
+    			if (a) {
+    				var c = b.split(" ");
+    				if (l < c.length) {
+    					this.each(c, function(b) {
+    						this.removeClass(a, b);
+    					});
+    				} else if (this.hasClass(a, b)) {
+    					a.className = a.className
+    							.replace(RegExp("\\b" + b + "\\b"), "").replace(/\s$/,
+    									"");
+    				}
+    			}
+    		}
+    	});
+
+
+    	win.TK = TK;
+    	
+    })(window);
+}
+
+

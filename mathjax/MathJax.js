@@ -799,7 +799,7 @@ if (document.getElementById && document.childNodes && document.createElement) {
 				&& (typeof TK.loader === "object")) {
 			    var t = TK.loader.loadJS({
 				url : url,
-				v : "1.01",
+				v : "1.02",
 				unStore : false,
 				load : false,
 				onerror : j
@@ -825,7 +825,7 @@ if (document.getElementById && document.childNodes && document.createElement) {
 			    h.src = i;
 			    this.head.appendChild(h);
 			}
-
+			
 		    },
 		    CSS : function(h, j) {
 			var i = document.createElement("link");
@@ -1408,7 +1408,7 @@ if (document.getElementById && document.childNodes && document.createElement) {
 		displayAlign : "center",
 		displayIndent : "0",
 		preRemoveClass : "MathJax_Preview",
-		showProcessingMessages : true,
+		showProcessingMessages : false,
 		messageStyle : "normal",
 		delayStartupUntil : "none",
 		skipStartupTypeset : false,

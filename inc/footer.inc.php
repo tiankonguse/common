@@ -42,7 +42,7 @@
 			}
 			?>
 		<?php 
-		if(0){
+		if(1){
 				?>
 		<script type="text/javascript">
 			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
@@ -70,7 +70,7 @@ function showMessage(message) {
     $("._message.modal-backdrop.hide").addClass("in");
 }
 (function() {
-    if (jQuery) {
+    if (typeof jQuery != "undefined") {
 		$(document).ready(function() {
 	            var $_message = jQuery("#_message");
 	            var $_message_ok = jQuery("#_message .ok");
@@ -89,8 +89,3 @@ function showMessage(message) {
     }
 })();
 </script>
-
-
-
-
-

@@ -1,16 +1,23 @@
-var TK = TK || {};
+(function(window) {
+    "use strict";
+    window.TK = window.TK || {};
 
-TK.loader = {};
+    TK.basepath = window.basepath || "http://tiankonguse.com";
+    window.basepath = TK.basepath;
 
-(function(loader, basepath) {
-    var version = "1.01";
+})(window);
+
+(function(TK) {
+    "use strict";
+
+    var loader = TK.loader = {}, /**/
+    basepath = TK.basepath, /**/
+    version = "1.04", /**/
+    head = document.getElementsByTagName('head')[0], /**/
+    hasjQuery = false /**/;
+
     loader.files = [];
     loader.filemeta = [];
-    TK.basepath = basepath;
-    basepath = basepath || "http://tiankonguse.com";
-
-    var load;
-    var hasjQuery = false;
 
     // 判断是否支持本地存储
     loader.localstorage = function() {
@@ -36,7 +43,7 @@ TK.loader = {};
 	}
     };
 
-    // 获取最新文件元信息
+    // 获取文件元信息
     loader.getLoaderFileMetaInfo = function(key) {
 	if (loader.filemeta && loader.filemeta.length > 0) {
 	    for ( var i = 0; i < loader.filemeta.length; i++) {
@@ -90,9 +97,6 @@ TK.loader = {};
 
     // 比较缓存数据是否为最新版本
     loader.compareFileMetaInfo = function(key) {
-	// if(load){
-	// return false;
-	// }
 	if (loader.filemeta && loader.filemeta.length > 0) {
 	    for ( var i = 0; i < loader.filemeta.length; i++) {
 		if (loader.filemeta[i].name == key) {
@@ -130,23 +134,19 @@ TK.loader = {};
 
     // 根据地址加载文件
     loader.fileLoader = function(file, callBack) {
-//	console.log(file[0]);
 	var ret = null;
 	if (!hasjQuery && (typeof jQuery != "undefined")) {
 	    hasjQuery = true;
 	}
 
 	if (file && file.length > 0) {
-	    file.push(callBack);
-	    loader.files.push(file);
-
-	    var name = file[0].name;
-	    var url = file[0].url;
-	    var v = file[0].v;
-	    var type = file[0].type;
-	    var load = file[0].load;
-	    var onerror = file[0].onerror;
-	    var unStore = file[0].unStore;
+	    var name = file[0].name, //
+	    url = file[0].url, //
+	    v = file[0].v, //
+	    type = file[0].type, //
+	    load = file[0].load, //
+	    onerror = file[0].onerror, //
+	    unStore = file[0].unStore;
 
 	    var metaInfo = loader.getLoaderFileMetaInfo(name);
 	    if (metaInfo == null) {
@@ -176,38 +176,61 @@ TK.loader = {};
 
 		if (typeof content != 'undefined' && content != null) {
 		    if (type == 'js') {
-			// js 放到 body 的最后
-			if (false && hasjQuery) {
-			    jQuery('head:last')
-				    .append(
-					    ret = jQuery(('<script type="text/javascript">'
-						    + content + '</script>')));
-			    ret = ret[0];
+			if (hasjQuery) {
+			    try {
+				ret = jQuery(('<script type="text/javascript">'
+					+ content + '</script>'))
+				if (ret.length == 1) {
+				    jQuery('head:last').append(ret);
+				    ret = ret[0];
+				} else {
+				    throw "error";
+				}
+			    } catch (e) {
+				ret = jQuery(('<script src="' + basepath + url + '"></script>'))
+				jQuery('head:last').append(ret);
+				ret = ret[0];
+			    }
 			} else {
 			    var script = document.createElement('script');
 			    script.type = 'text/javascript';
 			    if (onerror) {
 				script.onerror = onerror;
 			    }
-			    script.innerHTML = content;
-			    document.getElementsByTagName('head')[0]
-				    .appendChild(script);
+			    try {
+				script.innerHTML = content;
+			    } catch (e) {
+				script.src = basepath + url;
+			    }
+
+			    head.appendChild(script);
 			    ret = script;
 			}
 
 		    } else if (type == 'css') {
 			// css 放在 head 的最后
 			if (hasjQuery) {
-			    jQuery('head:first').append(
-				    ret = jQuery(('<style type="text/css">'
-					    + content + '</style>')));
+			    ret = jQuery(('<style type="text/css">' + content + '</style>'));
+			    jQuery('head:last').append(ret);
 			    ret = ret[0];
 			} else {
 			    var style = document.createElement('style');
-			    style.type = 'type="text/css"';
-			    style.innerHTML = content;
-			    document.getElementsByTagName('head')[0]
-				    .appendChild(style);
+			    style.type = 'text/css';
+
+			    try {
+				style.innerHTML = content;
+				head.appendChild(style);
+			    } catch (e) {
+				head.appendChild(style);
+				if (style.styleSheet
+					&& typeof (style.styleSheet.cssText) !== "undefined") {
+				    style.styleSheet.cssText = content;
+				} else {
+				    style.appendChild(document
+					    .createTextNode(content))
+				}
+			    }
+
 			    ret = style;
 			}
 
@@ -219,16 +242,15 @@ TK.loader = {};
 		    var script = document.createElement('script');
 		    script.type = 'text/javascript';
 		    script.src = basepath + url;
-		    document.getElementsByTagName('head')[0]
-			    .appendChild(script);
+		    head.appendChild(script);
 		    ret = script;
 		} else if (type == 'css') {
 		    // css 放在 head 的最后
 		    var style = document.createElement('link');
 		    style.rel = 'stylesheet';
-		    style.type = 'type="text/css"';
-		    style.href = basepath + url + '?t=' + new Date().getTime();
-		    document.getElementsByTagName('head')[0].appendChild(style);
+		    style.type = 'text/css';
+		    style.href = basepath + url;
+		    head.appendChild(style);
 		    ret = style;
 		}
 	    }
@@ -283,20 +305,20 @@ TK.loader = {};
     };
 
     loader.loadJS = function(obj) {
-	obj.name  = obj.url;
-	obj.type  ="js";
-	obj.load  = !!obj.load;
-	obj.unStore  =!!obj.unStore;
+	obj.name = obj.url;
+	obj.type = "js";
+	obj.load = !!obj.load;
+	obj.unStore = !!obj.unStore;
 	obj.v = obj.v || version;
 	return TK.loader.fileLoader([ obj ]);
     };
     loader.loadCSS = function(obj) {
-	obj.name  = obj.url;
-	obj.type  ="css";
-	obj.load  = !!obj.load;
-	obj.unStore  =!!obj.unStore;
+	obj.name = obj.url;
+	obj.type = "css";
+	obj.load = !!obj.load;
+	obj.unStore = !!obj.unStore;
 	obj.v = obj.v || version;
 	return TK.loader.fileLoader([ obj ]);
     };
 
-})(TK.loader, basepath);
+})(TK);
