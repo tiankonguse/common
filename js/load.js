@@ -140,6 +140,7 @@
 	}
 
 	if (file && file.length > 0) {
+
 	    var name = file[0].name, //
 	    url = file[0].url, //
 	    v = file[0].v, //
@@ -147,6 +148,10 @@
 	    load = file[0].load, //
 	    onerror = file[0].onerror, //
 	    unStore = file[0].unStore;
+
+	    if (loader.getVersion && loader.getVersion(url)) {
+		v = file[0].v = loader.getVersion(url);
+	    }
 
 	    var metaInfo = loader.getLoaderFileMetaInfo(name);
 	    if (metaInfo == null) {
@@ -184,6 +189,7 @@
 				    jQuery('head:last').append(ret);
 				    ret = ret[0];
 				} else {
+
 				    throw "error";
 				}
 			    } catch (e) {
@@ -322,3 +328,4 @@
     };
 
 })(TK);
+

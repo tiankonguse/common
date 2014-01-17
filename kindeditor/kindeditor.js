@@ -8,6 +8,7 @@
  * @version 4.1.6 (2013-03-24)
  ******************************************************************************/
 (function(window, undefined) {
+
     if (window.KindEditor) {
 	return;
     }
@@ -32,6 +33,7 @@
 	}
 	return Object.prototype.toString.call(val) === '[object Array]';
     }
+
     function _isFunction(val) {
 	if (!val) {
 	    return false;
@@ -435,6 +437,7 @@
 		    this.stopPropagation();
 		}
 	    });
+
     var _eventExpendo = 'kindeditor_' + _TIME, _eventId = 0, _eventData = {};
     function _getId(el) {
 	return el[_eventExpendo] || null;
@@ -1802,6 +1805,7 @@
 		};
 	    });
     var _K = K;
+
     K = function(expr, root) {
 	if (expr === undefined || expr === null) {
 	    return;
@@ -1852,6 +1856,7 @@
     });
     K.NodeClass = KNode;
     window.KindEditor = K;
+
     var _START_TO_START = 0, _START_TO_END = 1, _END_TO_END = 2, _END_TO_START = 3, _BOOKMARK_ID = 0;
     function _updateCollapsed(range) {
 	range.collapsed = (range.startContainer === range.endContainer && range.startOffset === range.endOffset);
@@ -2805,6 +2810,7 @@
     function KCmd(range) {
 	this.init(range);
     }
+
     _extend(
 	    KCmd,
 	    {
@@ -3455,6 +3461,7 @@
     }
     K.CmdClass = KCmd;
     K.cmd = _cmd;
+
     function _drag(options) {
 	var moveEl = options.moveEl, moveFn = options.moveFn, clickEl = options.clickEl
 		|| moveEl, beforeDrag = options.beforeDrag, iframeFix = options.iframeFix === undefined ? true
@@ -3677,6 +3684,7 @@
     if ((html = document.getElementsByTagName('html'))) {
 	_direction = html[0].dir;
     }
+
     function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 	var arr = [
 		(_direction === '' ? '<html>' : '<html dir="' + _direction
@@ -4121,6 +4129,7 @@
     function KMenu(options) {
 	this.init(options);
     }
+
     _extend(
 	    KMenu,
 	    KWidget,
@@ -4546,6 +4555,7 @@
     function _dialog(options) {
 	return new KDialog(options);
     }
+
     K.DialogClass = KDialog;
     K.dialog = _dialog;
     function _tabs(options) {
@@ -4668,6 +4678,7 @@
     K.loadScript = _loadScript;
     K.loadStyle = _loadStyle;
     K.ajax = _ajax;
+
     var _plugins = {};
     function _plugin(name, fn) {
 	if (name === undefined) {
@@ -5011,6 +5022,7 @@
 	self.menu = self.contextmenu = null;
 	self.dialogs = [];
     }
+
     KEditor.prototype = {
 	lang : function(mixed) {
 	    return _lang(mixed, this.langType);
@@ -5204,6 +5216,7 @@
 		}
 	    });
 	    var editHeight = _removeUnit(height) - toolbar.div.height();
+
 	    var edit = self.edit = _edit({
 		height : editHeight > 0 && _removeUnit(height) > self.minHeight ? editHeight
 			: self.minHeight,
@@ -5626,6 +5639,7 @@
 	    return self;
 	}
     };
+
     function _editor(options) {
 	return new KEditor(options);
     }
@@ -6252,6 +6266,7 @@
 			});
 		self
 			.beforeSetHtml(function(html) {
+
 			    if (_IE && _V <= 8) {
 				html = html
 					.replace(
@@ -6268,6 +6283,7 @@
 						    return full;
 						});
 			    }
+
 			    return html
 				    .replace(
 					    /<embed[^>]*type="([^"]+)"[^>]*>(?:<\/embed>)?/ig,
@@ -6279,10 +6295,8 @@
 							attrs.width, 0);
 						attrs.height = _undef(
 							attrs.height, 0);
-						return _mediaImg(
-							self.themesPath
-								+ 'common/blank.gif',
-							attrs);
+
+						return _mediaImg(self.themesPath + "common/blank.gif",attrs);
 					    })
 				    .replace(
 					    /<a[^>]*name="([^"]+)"[^>]*>(?:<\/a>)?/ig,
@@ -6291,11 +6305,13 @@
 						if (attrs.href !== undefined) {
 						    return full;
 						}
-						return '<img class="ke-anchor" src="'
+						var ret = "<img class=\"ke-anchor\" src=\""
 							+ self.themesPath
-							+ 'common/anchor.gif" data-ke-name="'
+							+ "common/anchor.gif\" data-ke-name=\""
 							+ escape(attrs.name)
-							+ '" />';
+							+ "\" />";
+
+						return ret;
 					    })
 				    .replace(
 					    /<script([^>]*)>([\s\S]*?)<\/script>/ig,
@@ -6346,4 +6362,5 @@
 					    });
 			});
 	    });
+
 })(window);

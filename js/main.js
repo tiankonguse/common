@@ -1,4 +1,5 @@
 (function() {
+    "use strict";
     if (typeof jQuery != "undefined") {
 	$(document).ready(function() {
 	    // 监听滚动
