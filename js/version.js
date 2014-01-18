@@ -2,6 +2,8 @@
     "use strict";
     var versionList = [];
     versionList["/i/css/main.css"] = "1.01";
+    versionList["/record/css/main.css"] = "1.01";
+    versionList["/record/js/main.js"] = "1.01";
     loader.getVersion = function(url) {
 	return versionList[url];
     };
