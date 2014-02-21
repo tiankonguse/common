@@ -41,3 +41,30 @@
 	};
     }
 })();
+function showMessage(message) {
+    "use strict";
+    var $message = $("#_message");
+    $message.find(".modal-body>p").text(message);
+    $message.addClass("in");
+    $("._message.modal-backdrop.hide").addClass("in");
+}
+(function() {
+    "use strict";
+    if (typeof jQuery != "undefined") {
+	$(document).ready(function() {
+	    var $_message = jQuery("#_message");
+	    var $_message_ok = jQuery("#_message .ok");
+	    var $_message_close = jQuery("#_message .close");
+	    var $_message_modal_backdrop = jQuery("._message.modal-backdrop");
+
+	    $_message_close.click(function() {
+		$_message.removeClass("in");
+		$_message_modal_backdrop.removeClass("in");
+	    });
+	    $_message_ok.click(function() {
+		$_message.removeClass("in");
+		$_message_modal_backdrop.removeClass("in");
+	    });
+	});
+    }
+})();

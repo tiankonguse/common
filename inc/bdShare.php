@@ -25,13 +25,7 @@
 		"bdImg" : "3",
 		"bdPos" : "right",
 		"bdTop" : "250"
-	    } ],
-	    image : [
-	    // 此处放置图片分享设置
-	    ],
-	    selectShare : [
-	    // 此处放置划词分享设置
-	    ]
+	    } ]
 	}
 	function bdShare() {
 	    with (document)
