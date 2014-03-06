@@ -14,6 +14,7 @@
 	name="baidu-site-verification" content="ZhyOV9d6LT">
 <meta
 	name="baidu_union_verify" content="c590d7896c8220afbefc11661acc9820">
+<meta name="sogou_site_verification" content="XZpzue9RqJ"/>
 <meta
 	property="wb:webmaster" content="eaa4d1a5502a5cf0" />
 
@@ -39,11 +40,11 @@ var basepath = "<?php echo DOMAIN;?>";
   });
 </script>
 <script type="text/javascript">
-TK.loader.loadJS({url:"/common/js/jquery.js",v:"1.03"});
-TK.loader.loadJS({url:"/common/js/function.js",v:"1.02",load:false});
-TK.loader.loadCSS({url:"/common/css/main.css",v:"1.02"});
+TK.loader.loadJS({url:"/common/js/jquery.js"});
+TK.loader.loadJS({url:"/common/js/function.js"});
+TK.loader.loadCSS({url:"/common/css/main.css"});
 if (!TK.MathJax) {
     TK.MathJax = {};
 }
-TK.loader.loadJS({url:"/common/mathjax/MathJax.js", v:"1.04"});
+//TK.loader.loadJS({url:"/common/mathjax/MathJax.js"});
 </script>
