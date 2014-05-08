@@ -1,20 +1,14 @@
 <meta charset="utf-8">
 <meta
 	name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <meta
-	name="apple-mobile-web-app-capable" content="yes">
+	name="apple-mobile-web-app-capable" content="yes" />
 <meta
-	name="apple-touch-fullscreen" content="yes">
-<meta name="author" content="tiankonguse">
-<meta http-equiv="pragma" content="no-cache">
+	name="apple-touch-fullscreen" content="yes" />
+<meta name="author" content="tiankonguse" />
 <meta
-	name="description" content="<?php echo $title; ?>">
-<meta
-	name="baidu-site-verification" content="ZhyOV9d6LT">
-<meta
-	name="baidu_union_verify" content="c590d7896c8220afbefc11661acc9820">
-<meta name="sogou_site_verification" content="XZpzue9RqJ"/>
+	name="description" content="<?php echo $title; ?>" />
 <meta
 	property="wb:webmaster" content="eaa4d1a5502a5cf0" />
 

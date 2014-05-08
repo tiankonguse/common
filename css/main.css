@@ -62,7 +62,7 @@ textarea {
 }
 
 .title {
-	font-size: 50px;
+	font-size: 30px;
 	text-align: center;
 	color: #666666;
 	margin: 50px 0 0px 0;
@@ -602,3 +602,30 @@ blockquote {
 	color: #aaa;
 	quotes: "" "";
 }
+
+
+/* footer colum begin */
+.footer-one, .footer-two{
+    width: 50%;
+    float: left;
+}
+
+.foot-title {
+    color: #6a6b6b;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Ebrima, Arial;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    border-spacing: 6px;
+    display: inline-block;
+}
+.foot-social {
+    margin-left: 5px;
+}
+
+
+
+/* footer colum end */
+
+
