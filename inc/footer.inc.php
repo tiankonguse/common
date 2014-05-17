@@ -53,8 +53,8 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c743a9badeff72a194b85235f301f37' type='text/javascript'  %3E%3C/script%3E"));
 </script>
 <?php 
-echo "<script type=\"text/javascript\" src=\"http://tajs.qq.com/stats?sId=26608498\" charset=\"UTF-8\"></script>";
-echo "<script type=\"text/javascript\">var cnzz_protocol = ((\"https:\" == document.location.protocol) ? \" https://\" : \" http://\");document.write(unescape(\"%3Cspan id='cnzz_stat_icon_1000110679'%3E%3C/span%3E%3Cscript src='\" + cnzz_protocol + \"s22.cnzz.com/z_stat.php%3Fid%3D1000110679%26show%3Dpic' type='text/javascript' %3E%3C/script%3E\"));</script>";
+//echo "<script type=\"text/javascript\" src=\"http://tajs.qq.com/stats?sId=26608498\" charset=\"UTF-8\"></script>";
+//echo "<script type=\"text/javascript\">var cnzz_protocol = ((\"https:\" == document.location.protocol) ? \" https://\" : \" http://\");document.write(unescape(\"%3Cspan id='cnzz_stat_icon_1000110679'%3E%3C/span%3E%3Cscript src='\" + cnzz_protocol + \"s22.cnzz.com/z_stat.php%3Fid%3D1000110679%26show%3Dpic' type='text/javascript' %3E%3C/script%3E\"));</script>";
 ?>
             </div>
     </div>

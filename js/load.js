@@ -168,7 +168,7 @@
 
                 var content = loader.getItem(name);
 
-                if (load || typeof content == 'undefined' || content == null) {
+                if (load || typeof content == 'undefined' || content == null || content == "" ) {
                     loader.getFile(basepath + url, false);
 
                     if (typeof loader.getFileResponse != 'undefined'
@@ -178,13 +178,14 @@
                         content = loader.getItem(name);
                     }
                 }
+                
 
                 if (typeof content != 'undefined' && content != null) {
                     if (type == 'js') {
                         if (hasjQuery) {
                             try {
-                                ret = jQuery(('<script type="text/javascript">'
-                                + content + '</script>'))
+                                ret = jQuery(('<script type="text/javascript">'+ content + '</script>'));
+
                                 if (ret.length == 1) {
                                     jQuery('head:last').append(ret);
                                     ret = ret[0];
