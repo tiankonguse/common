@@ -13,6 +13,16 @@
 </div>
 
 <div class="footer clearfix">
+    <div class="clearfix">
+        <!-- footer -->
+        <ins class="adsbygoogle "
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-2326969899478823"
+             data-ad-slot="5074793995"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
     <div class="footer-one">
             <div class="copyright">
                 <p>
@@ -48,14 +58,10 @@
                 </p>
             </div>
             <div class="copyright">
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c743a9badeff72a194b85235f301f37' type='text/javascript'  %3E%3C/script%3E"));
-</script>
-<?php 
-//echo "<script type=\"text/javascript\" src=\"http://tajs.qq.com/stats?sId=26608498\" charset=\"UTF-8\"></script>";
-//echo "<script type=\"text/javascript\">var cnzz_protocol = ((\"https:\" == document.location.protocol) ? \" https://\" : \" http://\");document.write(unescape(\"%3Cspan id='cnzz_stat_icon_1000110679'%3E%3C/span%3E%3Cscript src='\" + cnzz_protocol + \"s22.cnzz.com/z_stat.php%3Fid%3D1000110679%26show%3Dpic' type='text/javascript' %3E%3C/script%3E\"));</script>";
-?>
+                <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c743a9badeff72a194b85235f301f37' type='text/javascript'  %3E%3C/script%3E"));
+                </script>
             </div>
     </div>
     <div class="footer-two">
@@ -83,17 +89,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         </div>
     </div>
 </div>
-<div
-    class="top-btn top-show top-hide"></div>
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-38870489-2', 'tiankonguse.com');
-  ga('send', 'pageview');
-
-  </script>
-
+<div class="top-btn top-show top-hide"></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

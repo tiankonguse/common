@@ -39,6 +39,7 @@ if (! defined ( "COMMON_LOAD" )) {
 	! defined ( "PATH_LOG" ) && define ( "PATH_LOG", "/log/");
 	! defined ( "PATH_TIMELINE" ) && define ( "PATH_TIMELINE", "/timeline/");
 	! defined ( "PATH_LAB" ) && define ( "PATH_LAB", "/lab/");
+	! defined ( "PATH_BLOG" ) && define ( "PATH_BLOG", "/blog/");
 
 
 	! defined ( "DOMAIN_COMMON" ) && define ( "DOMAIN_COMMON", DOMAIN . PATH_COMMON );
@@ -55,5 +56,6 @@ if (! defined ( "COMMON_LOAD" )) {
 	! defined ( "DOMAIN_LOG" ) && define ( "DOMAIN_LOG", DOMAIN . PATH_LOG );
 	! defined ( "DOMAIN_TIMELINE" ) && define ( "DOMAIN_TIMELINE", DOMAIN . PATH_TIMELINE );
 	! defined ( "DOMAIN_LAB" ) && define ( "DOMAIN_LAB", DOMAIN . PATH_LAB);
+	! defined ( "DOMAIN_BLOG" ) && define ( "DOMAIN_BLOG", DOMAIN . PATH_BLOG);
 }
 ?>

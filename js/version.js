@@ -12,6 +12,7 @@
     versionList["/record/js/main.js"] = "1.04.02";
     versionList["/record/js/write.js"] = "1.07";
     versionList["/common/kindeditor/plugins/code/prettify.css"] = "1.02.2";
+    versionList["/lab/js/commmon.js"] = "1.01";
     loader.getVersion = function(url) {
         return versionList[url];
     };
