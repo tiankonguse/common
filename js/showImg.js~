@@ -265,10 +265,11 @@ function zoomclose() {
 
 function addZoom(selector) {
     jQuery(selector).each(function(i) {
-	    var that = jQuery(this);
-	    that.click(function() {
-	        zoom(that[0]);
+	var that = jQuery(this);
+	that.click(function() {
+	    zoom(that[0]);
 
-	    });
+	});
+
     });
 }
