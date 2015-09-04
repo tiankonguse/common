@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Shanghai');
 
 define('DB_HOST','127.0.0.1');
 define('DB_USER','tiankong_site');
-define('DB_NAME','tiankong_site');
+define('DB_NAME','tiankonguse_site');
 define('DB_PASS','4nMuNnZX');
 define('SALT','tiankonguse');
 
@@ -15,7 +15,7 @@ define('SALT','tiankonguse');
 $conn = false;
 $result = false;
 
-showError();
+//showError();
 
 function showError(){
     ini_set("display_errors","1");
