@@ -75,7 +75,7 @@ if(!function_exists("mysql_insert_id")){
         if(!$link){
             $link = $conn;
         }
-        return mysql_insert_id($link);
+        return mysqli_insert_id($link);
     }
 }
 
@@ -86,7 +86,7 @@ if(!function_exists("mysql_close")){
         if(!$link){
             $link = $conn;
         }
-        return mysql_close($link);
+        return mysqli_close($link);
     }
 }
 
